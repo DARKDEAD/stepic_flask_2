@@ -3,7 +3,6 @@
 <main class="container mt-3">
     <h1 class="display-5 mt-4">Летим {{ departure }}</h1>
     <p class="mb-4">Найдено {{ data_tours|length }} туров, от {{  cost_tours|min }} до {{ cost_tours|max }} и от {{ amount_nights|min }} ночей до {{ amount_nights|max }} ночей</p>
-    <!-- CARDS -->
     <div class="row mt-5">
         {% for tour in data_tours %}
         <div class="col-4">

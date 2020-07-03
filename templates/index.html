@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 {% block container %}
     <main class="container mt-3" xmlns="http://www.w3.org/1999/html">
-        <!-- HERO -->
         <section class="jumbotron text-center mt-4">
             <h1 class="display-4">Всякие туры</h1>
             <p class="lead">{{ subtitle }}</p>
             <p class="mt-5 w-50 mx-auto">{{ description }}</p>
         </section>
-        <!-- CARDS -->
         <div class="row mt-5">
             {% for tour in tours %}
             <div class="col-4">
