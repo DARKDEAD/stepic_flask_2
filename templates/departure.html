@@ -10,7 +10,7 @@
             <div class="card mb-4">
                 <a href="/tours/{{ tour }}"><img src="{{ data_tours[tour].picture }}" class="card-img-top img-fluid" alt=""></a>
                 <div class="card-body">
-                    <h2 class="h5 card-title">{{ data_tours[tour].title }} {{ "★" * data_tours[tour].stars }}</h2>
+                    <h2 class="h5 card-title">{{ data_tours[tour].title }} {{ "★" * data_tours[tour].stars|int }}</h2>
                     <p class="card-text">{{ data_tours[tour].description|truncate(100) }}</p>
                     <a href="/tours/{{ tour }}" class="btn btn-sm btn-primary">Подробнее</a>
                 </div>

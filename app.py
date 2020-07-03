@@ -19,7 +19,6 @@ def render_index():
 
     for d_tours_key, d_tour_value in data_tours.items():
         if amount <= 6:
-            d_tour_value["stars"] = int(d_tour_value["stars"])
             log_data_tours[d_tours_key] = d_tour_value
             amount += 1
         else:
@@ -43,7 +42,6 @@ def render_departures(id_departure):
 
     for d_tour_key, d_tour_value in data_tours.items():
         if d_tour_value.get("departure") == id_departure:
-            d_tour_value["stars"] = int(d_tour_value["stars"])
             new_departure[d_tour_key] = d_tour_value
             cost_tours.append(d_tour_value.get("price"))
             amount_nights.append(d_tour_value.get("nights"))
@@ -66,7 +64,6 @@ def render_tours(id_tour):
         data_tours=data_tours.get(id_tour),
         title=data_title,
         departures=data_departures,
-        stars=int(data_tours.get(id_tour)["stars"]),
     )
 
 
