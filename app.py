@@ -50,7 +50,6 @@ def render_departures(id_departure):
         "departure.html",
         title=data_title,
         data_tours=new_departure,
-        departure=data_departures[id_departure],
         departures=data_departures,
         cost_tours=cost_tours,
         amount_nights=amount_nights,
