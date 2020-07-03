@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 
-# from flask_debugtoolbar import DebugToolbarExtension
 from data import tours as data_tours
 from data import departures as data_departures
 from data import title as data_title
@@ -71,5 +70,4 @@ def render_not_found(error):
     return render_template("404.html", err=error)
 
 
-# toolbar = DebugToolbarExtension(app)
 app.run("127.0.0.1", 8000)
