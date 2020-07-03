@@ -2,19 +2,21 @@
 {% block container %}
 <main class="container mt-3">
     <h1 class="display-5 mt-4">Летим {{ departure }}</h1>
-    <p class="mb-4">Найдено {{ data_tours|length }} туров, от 26 000 до 84 600 и от 4 ночей до 15 ночей</p>
+    <p class="mb-4">Найдено {{ data_tours|length }} туров, от {{  cost_tours|min }} до {{ cost_tours|max }} и от {{ amount_nights|min }} ночей до {{ amount_nights|max }} ночей</p>
     <!-- CARDS -->
     <div class="row mt-5">
+        {% for tour in data_tours %}
         <div class="col-4">
             <div class="card mb-4">
-                <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
+                <a href="/tours/{{ tour }}"><img src="{{ data_tours[tour].picture }}" class="card-img-top img-fluid" alt=""></a>
                 <div class="card-body">
-                    <h2 class="h5 card-title">Hotel title</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
+                    <h2 class="h5 card-title">{{ data_tours[tour].title }} {{ "★" * data_tours[tour].stars }}</h2>
+                    <p class="card-text">{{ data_tours[tour].description|truncate(100) }}</p>
+                    <a href="/tours/{{ tour }}" class="btn btn-sm btn-primary">Подробнее</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </main>
 {% endblock %}
